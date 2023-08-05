@@ -1,4 +1,4 @@
-var mongoose=require("mongoose");
+import mongoose from "mongoose";
 
 var forgotpassSchema=new mongoose.Schema({
     username:String,
@@ -9,4 +9,4 @@ var forgotpassSchema=new mongoose.Schema({
     status:{type:Boolean,default:true}, 
 }); 
 var forgotpass= mongoose.model("forgotpass",forgotpassSchema);
-module.exports =mongoose.model("forgotpass",forgotpassSchema);
+export default mongoose.model("forgotpass",forgotpassSchema);

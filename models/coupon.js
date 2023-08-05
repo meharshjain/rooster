@@ -1,4 +1,4 @@
-var mongoose=require("mongoose");
+import mongoose from "mongoose";
 
 var couponSchema=new mongoose.Schema({
     name:String,
@@ -13,4 +13,4 @@ var couponSchema=new mongoose.Schema({
     MaxOrder:String
 }); 
 var coupon= mongoose.model("coupon",couponSchema);
-module.exports =mongoose.model("coupon",couponSchema);
+export default mongoose.model("coupon",couponSchema);

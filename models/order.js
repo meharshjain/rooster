@@ -1,4 +1,4 @@
-var mongoose=require("mongoose");
+import mongoose from "mongoose";
 
 var orderSchema=new mongoose.Schema({
     userid:String,
@@ -19,4 +19,4 @@ var orderSchema=new mongoose.Schema({
     createdAt:String
 }); 
 var order= mongoose.model("order",orderSchema);
-module.exports =mongoose.model("order",orderSchema);
+export default mongoose.model("order",orderSchema);

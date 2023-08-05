@@ -1,4 +1,4 @@
-var mongoose=require("mongoose");
+import mongoose from "mongoose";
 
 var restaurantSchema=new mongoose.Schema({
     coverImage:String,
@@ -18,4 +18,4 @@ var restaurantSchema=new mongoose.Schema({
     couponid:String
 }); 
 var restaurant= mongoose.model("restaurant",restaurantSchema);
-module.exports =mongoose.model("restaurant",restaurantSchema);
+export default mongoose.model("restaurant",restaurantSchema);

@@ -1,10 +1,11 @@
-var express = require("express"),
-  router = express.Router(),
-  cart = require("../models/cart.js"),
-  log = require("../models/logs.js"),
-  log = require("../models/logs.js"),
-  product = require("../models/product.js");
-router.use(require("flash")());
+import express from "express";
+var router = express.Router();
+import cart from "../models/cart.js";
+import log from "../models/logs.js";
+import passport from "passport";
+import product from "../models/product.js";
+/* import flash from "flash";
+router.use(flash)(); */
 
 router.get("/user", function (req, res) {
   return res.json(req.user);
@@ -12,8 +13,6 @@ router.get("/user", function (req, res) {
 
 router.post("/loginst1", function (req, res) {
   res.redirect("/loginst2");
-  stlat = req.body.demo;
-  stlong = req.body.demo1;
 });
 
 router.get("/products", function (req, res) {
@@ -240,4 +239,4 @@ router.post("/orderpost/:newcartid", function (req, res) {
     });
 });
 
-module.exports = router;
+export default router;

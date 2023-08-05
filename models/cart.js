@@ -1,4 +1,4 @@
-var mongoose=require("mongoose");
+import mongoose from "mongoose";
 
 var cartSchema=new mongoose.Schema({
     user:String,
@@ -20,5 +20,5 @@ var cartSchema=new mongoose.Schema({
     deliveryAddress:{type:String,default:"nul"},
 }); 
 var cart= mongoose.model("cart",cartSchema);
-module.exports =mongoose.model("cart",cartSchema);
+export default mongoose.model("cart",cartSchema);
 

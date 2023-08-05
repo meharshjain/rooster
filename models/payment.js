@@ -1,4 +1,4 @@
-var mongoose=require("mongoose");
+import mongoose from "mongoose";
 
 var paymentSchema=new mongoose.Schema({
     username:String,
@@ -8,6 +8,6 @@ var paymentSchema=new mongoose.Schema({
     infavor:{type:String,default:"acupg"},
     status:{type:Boolean,default:true}}); 
 var payment = mongoose.model("payment",paymentSchema);
-module.exports =mongoose.model("payment",paymentSchema);
+export default mongoose.model("payment",paymentSchema);
 
 

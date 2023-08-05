@@ -1,4 +1,4 @@
-var mongoose=require("mongoose");
+import mongoose from "mongoose";
 
 var productSchema=new mongoose.Schema({
     name:String,
@@ -13,4 +13,4 @@ var productSchema=new mongoose.Schema({
     preptime:String,
 }); 
 var product= mongoose.model("product",productSchema);
-module.exports =mongoose.model("product",productSchema);
+export default mongoose.model("product",productSchema);

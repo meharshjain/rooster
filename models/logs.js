@@ -1,4 +1,4 @@
-var mongoose=require("mongoose");
+import mongoose from "mongoose";
 
 var logSchema=new mongoose.Schema({
     username:String,
@@ -8,4 +8,4 @@ var logSchema=new mongoose.Schema({
     ip:String,
 }); 
 var log= mongoose.model("log",logSchema);
-module.exports =mongoose.model("log",logSchema);
+export default mongoose.model("log",logSchema);
