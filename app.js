@@ -1,6 +1,5 @@
 import express from "express";
 import mongoose from "mongoose";
-import askBing from "./askBing/askBing.js";
 var app = express();
 import methodOverride from "method-override";
 import passport from "passport";
@@ -18,7 +17,6 @@ const secretCode = process.env.secret;
 const port = process.env.PORT || 5000;
 //app.use(express.static(__dirname + "/public"));
 //app.set("view engine", "ejs");
-//askBing("hello")
 //ONLINE MONGODB ATLAS
 mongoose
   .connect(DB)

@@ -1,6 +1,5 @@
 import { BingChat } from "bing-chat";
 import dotenv from "dotenv";
-import say from "say";
 
 dotenv.config();
 /**
@@ -10,16 +9,17 @@ dotenv.config();
  * npx tsx demos/demo-conversation.ts
  * ```
  */
-async function askBing(prompt) {
+async function askBing(req, res, next) {
+  var prompt = req.body.gender;
   const api = new BingChat({ cookie: process.env.BING_COOKIE });
 
-  const res = await api.sendMessage(prompt, {});
+  const response = await api.sendMessage(prompt, {});
 
-  // Function to make the bot read the response
+  /*   // Function to make the bot read the response
   function readResponse(text) {
     say.speak(text);
-  }
-  readResponse(res.text);
+  } */
+  res.json({ response: response.text });
 }
 
-export default askBing
+export default askBing;

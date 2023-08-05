@@ -4,6 +4,7 @@ import cart from "../models/cart.js";
 import log from "../models/logs.js";
 import passport from "passport";
 import product from "../models/product.js";
+import askBing from "../askBing/askBing.js";
 /* import flash from "flash";
 router.use(flash)(); */
 
@@ -16,10 +17,15 @@ router.post("/loginst1", function (req, res) {
 });
 
 router.get("/products", function (req, res) {
-  if (!req.user) return res.json({Error: "Access Denied"});
+  if (!req.user) return res.json({ Error: "Access Denied" });
   product.find({}, function (err, product) {
     res.json(product);
   });
+});
+
+router.post("/productfilter", askBing, function (req, res) {
+  if (!req.user) return res.json({ Error: "Access Denied" });
+  res.json({ res: response });
 });
 
 router.get("/register", function (req, res) {
@@ -213,7 +219,7 @@ router.post("/deletecartproduct/:id", function (req, res) {
 
 //orderpost
 router.post("/orderpost/:newcartid", function (req, res) {
-/*   a.findOneAndUpdate(
+  /*   a.findOneAndUpdate(
     { username: req.user.username },
     { paid: false },
     function (err, data) {
